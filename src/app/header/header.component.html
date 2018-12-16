@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg mb-3 navbar-dark">
+  <a routerLink="/">
+	 <img class="logo" src="assets/logo.svg">
+  </a>
+
+   <div id="wrapper" class="d-lg-none" #wrapper (click)="toggleButton(wrapper)">
+    <div class="circle icon">
+      <span class="line top"></span>
+      <span class="line middle"></span>
+      <span class="line bottom"></span>
+    </div>
+  </div>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <form class="form-inline my-2 my-lg-0 ml-auto" #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)">
+      <input
+        class="form-control mr-sm-2"
+        type="search" placeholder="Search" aria-label="Search"
+        [(ngModel)]="q"
+        name="q" />
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>

@@ -1,0 +1,35 @@
+<div class="loader" *ngIf="!webDesignChannels"></div>
+
+
+<div class="container-fluid" *ngIf="webDesignChannels">
+
+  <h1>Web design</h1>
+  <hr />
+  <div class="row">
+    
+      <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-4" *ngFor="let channel of webDesignChannels.items">
+        <a routerLink="/channel/{{channel.snippet.customUrl}}/{{channel.id}}">
+          <div class="wrapper">
+            <img #el (load)="imageFadeIn(el)" src="{{channel.snippet.thumbnails.medium.url}}">
+            <h1>{{channel.snippet.title}}</h1>
+          </div>
+        </a>
+      </div>
+  </div>
+
+
+  <h1>Web development</h1>
+  <hr />
+  <div class="row" *ngIf="webDevChannels">
+  
+    <div class="col-6 col-lg-2 col-md-3 col-sm-2 mb-4" *ngFor="let channel of webDevChannels.items">
+      <a routerLink="/channel/{{channel.snippet.customUrl}}/{{channel.id}}">
+        <div class="wrapper">
+          <img #el (load)="imageFadeIn(el)" src="{{channel.snippet.thumbnails.medium.url}}">
+          <h1>{{channel.snippet.title}}</h1>
+        </div>
+      </a>
+    </div> 
+
+  </div>
+</div>
