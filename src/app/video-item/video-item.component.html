@@ -2,34 +2,37 @@
 
 <app-page-not-found *ngIf="!item.items.length"></app-page-not-found>
 
-<div class="col-8 m-auto" *ngIf="item.items.length">	
-	
-	<h1 class="text-center">{{ item.items[0].snippet.title}}</h1>
+<section class="container mb-4">
 
-	<div class="embed-responsive embed-responsive-16by9 mb-3">
-		<iframe class="embed-responsive-item"
-		[src]="getEmbedUrl(item)"
-		allowfullscreen></iframe>
+	<div class="col-8 m-auto" *ngIf="item.items.length">	
+		
+		<h1 class="text-center">{{ item.items[0].snippet.title}}</h1>
+
+		<div class="embed-responsive embed-responsive-16by9 mb-3">
+			<iframe class="embed-responsive-item"
+			[src]="getEmbedUrl(item)"
+			allowfullscreen></iframe>
+		</div>
+		
+
+		<div class="mb-2">
+			<span class="mr-3">
+				<i class="far fa-calendar-alt"></i>
+		        {{ item.items[0].snippet.publishedAt | date }}
+			</span>
+
+			<span>
+		        <i class="far fa-calendar-alt"></i>
+		        {{ item.items[0].statistics.viewCount }} views
+			</span>
+		</div>
+
+		<div class="mb-2">
+			{{ item.items[0].snippet.description}}
+		</div>
+
+		<span class="tag" *ngFor="let tag of item.items[0].snippet.tags">{{tag}}</span>
+
 	</div>
-	
 
-	<div class="mb-2">
-		<span class="mr-3">
-			<i class="far fa-calendar-alt"></i>
-	        {{ item.items[0].snippet.publishedAt | date }}
-		</span>
-
-		<span>
-	        <i class="far fa-calendar-alt"></i>
-	        {{ item.items[0].statistics.viewCount }} views
-		</span>
-	</div>
-
-	<div class="mb-2">
-		{{ item.items[0].snippet.description}}
-	</div>
-
-	<span class="tag" *ngFor="let tag of item.items[0].snippet.tags">{{tag}}</span>
-
-
-</div>
+</section>

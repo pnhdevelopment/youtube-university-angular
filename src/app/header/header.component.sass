@@ -17,13 +17,13 @@ nav
 	cursor: pointer
 
 .circle
-	width: 50px
-	height: 50px
+	width: 40px
+	height: 40px
 	position: relative
 
 .line
 	position: absolute
-	height: 6px
+	height: 5px
 	width: 100%
 	background: white
 	border-radius: 8px
@@ -46,3 +46,13 @@ nav
 .icon.closed .middle, .icon.closed .bottom
 	transform: rotate(-45deg)
 	top: 48%
+
+
+.mobile-nav
+	background-color: rgba(0, 0, 0, 0.7)
+	overflow: hidden
+	max-height: 0
+	transition: 0.2s
+
+.mobile-nav.active
+	max-height: 130px

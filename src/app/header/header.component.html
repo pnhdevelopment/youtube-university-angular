@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg mb-3 navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-dark mb-3">
   <a routerLink="/">
 	 <img class="logo" src="assets/logo.svg">
   </a>
@@ -23,3 +23,20 @@
     </form>
   </div>
 </nav>
+
+
+<!-- Mobile nav -->
+<div class="mobile-nav">
+  
+  <form class="form-inline m-3">
+
+      <input
+        class="form-control mr-sm-2 w-100 mb-3"
+        type="search" placeholder="Search" aria-label="Search"
+        [(ngModel)]="q"
+        name="q" />
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+
+  </form>
+
+</div>

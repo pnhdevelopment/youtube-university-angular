@@ -17,6 +17,7 @@ export class HeaderComponent implements OnInit {
 
   toggleButton(wrapper){
     wrapper.querySelector('.circle').classList.toggle("closed");
+    document.querySelector('.mobile-nav').classList.toggle("active");
   }
 
   onSubmit(form: NgForm) {
