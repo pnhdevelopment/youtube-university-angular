@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -24,7 +25,9 @@ export class HomeComponent implements OnInit {
   public webDesignChannelIds: string = 'UCvBGFeXbBrq3W9_0oNLJREQ,UCyU5wkjgQYGRB0hIHMwm2Sg,UCVyRiMvfUNMA1UPlDPzG5Ow,UC-b3c7kxa5vU-bnmaROgvog,UCIp9sEZiv36cDG7cEnrVU7Q,UC64eec0UYHxflyEWgyZOvLA';
 
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private titleService: Title) { }
 
   ngOnInit() {
 
@@ -38,6 +41,8 @@ export class HomeComponent implements OnInit {
   	this.http.get(this.webDesignURL).subscribe(response => {
     	this.webDesignChannels = response;
   	});
+
+    this.titleService.setTitle( 'Youtube University' );
 
   }
 

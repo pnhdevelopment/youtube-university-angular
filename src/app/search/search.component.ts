@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
+
 
 
 @Component({
@@ -15,15 +17,24 @@ export class SearchComponent implements OnInit {
   public searchQuery: string;
   public channel: any;
 
-  constructor(public route: ActivatedRoute, public http: HttpClient){
+  constructor(
+    public route: ActivatedRoute,
+    public http: HttpClient,
+    private titleService: Title){
 
   	this.route.queryParams.subscribe(params => {
   		this.searchQuery = params['q'];
-  		this.webDevURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=' + params['q'] + '&key=' + this.API_KEY;
+
+      if( !this.searchQuery ){
+        this.searchQuery = ""
+      }
+
+  		this.webDevURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=' + this.searchQuery + '&key=' + this.API_KEY;
       console.log(params)
 
       this.http.get(this.webDevURL).subscribe(response => {
         this.channel = response;
+        this.titleService.setTitle( "Search results for \"" + this.searchQuery + "\" - Youtube University" );
       });
 
     });
