@@ -45,6 +45,7 @@ export class HomeComponent implements OnInit {
 
   	this.http.get(this.webDevURL).subscribe(response => {
     	this.webDevChannels = response;
+      // console.log(this.webDevChannels);
   	});
 
   	this.http.get(this.webDesignURL).subscribe(response => {

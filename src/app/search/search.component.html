@@ -14,7 +14,12 @@
       <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-4" *ngFor="let item of channel.items">
         <a routerLink="/video/{{item.id.videoId}}">
           <div class="wrapper mb-2">
-            <img #el (load)="imageFadeIn(el)" src="{{item.snippet.thumbnails.medium.url}}">
+            <img
+              #el
+              (load)="imageFadeIn(el)"
+              src="{{item.snippet.thumbnails.medium.url}}"
+              alt="{{item.snippet.title}}"
+            />
           </div>
           <h2 class="mb-0">{{item.snippet.title}}</h2>
           <i class="far fa-calendar-alt"></i>
