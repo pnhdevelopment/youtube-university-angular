@@ -20,6 +20,7 @@ export class SearchComponent implements OnInit {
   constructor(
     public route: ActivatedRoute,
     public http: HttpClient,
+    private meta: Meta,
     private titleService: Title){
 
   	this.route.queryParams.subscribe(params => {
