@@ -26,6 +26,8 @@ export class ChannelComponent implements OnInit {
   	this.http.get(this.webDevURL).subscribe(response => {
     	this.channel = response;
 
+      console.log(this.channel);
+
       this.titleService.setTitle( this.channel.items[0].snippet.channelTitle + ' - Youtube University' );
 
   	});
