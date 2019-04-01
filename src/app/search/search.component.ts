@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
-
+import { Meta } from '@angular/platform-browser';
 
 
 @Component({
@@ -35,6 +35,7 @@ export class SearchComponent implements OnInit {
       this.http.get(this.webDevURL).subscribe(response => {
         this.channel = response;
         this.titleService.setTitle( "Search results for \"" + this.searchQuery + "\" - Youtube University" );
+        this.meta.addTag({ name: 'robots', content: 'noindex' });
       });
 
     });

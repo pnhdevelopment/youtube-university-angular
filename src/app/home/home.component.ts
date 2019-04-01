@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Title } from '@angular/platform-browser';
+import { Meta } from '@angular/platform-browser';
 
 
 @Component({
@@ -27,7 +28,15 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private titleService: Title) { }
+    private meta: Meta,
+    private titleService: Title){
+
+    this.titleService.setTitle( 'Youtube University' );
+    this.meta.addTag({ name: 'description', content: 'A collection of web design and web development tutorials.' });
+    this.meta.addTag({ name: 'author', content: 'pnhdevelopment' });
+    this.meta.addTag({ name: 'keywords', content: 'Web design, Web development' });
+
+  }
 
   ngOnInit() {
 
@@ -41,8 +50,6 @@ export class HomeComponent implements OnInit {
   	this.http.get(this.webDesignURL).subscribe(response => {
     	this.webDesignChannels = response;
   	});
-
-    this.titleService.setTitle( 'Youtube University' );
 
   }
 
