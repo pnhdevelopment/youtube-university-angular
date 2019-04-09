@@ -12,13 +12,21 @@
   </div>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+    <!-- #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)"   -->
+    <form class="form-inline my-2 my-lg-0 ml-auto" #f="ngForm" (ngSubmit)="onSubmit(f)" >
 
-    <form class="form-inline my-2 my-lg-0 ml-auto" #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)">
+      <!-- name="first" ngModel required #first="ngModel" -->
+
+      <!-- name="q" [(ngModel)]="q" -->
+
+
       <input
         class="form-control mr-sm-2"
         type="search" placeholder="Search" aria-label="Search"
-        [(ngModel)]="q"
-        name="q" />
+        name="q" ngModel required #q="ngModel"
+
+         />
       <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
@@ -28,15 +36,17 @@
 <!-- Mobile nav -->
 <div class="mobile-nav">
   
-  <form class="form-inline m-3">
+  <!--  #mobileSearchForm="ngForm" (ngSubmit)="onSubmit(mobileSearchForm)" -->
 
-      <input
-        class="form-control mr-sm-2 w-100 mb-3"
-        type="search" placeholder="Search" aria-label="Search"
-        [(ngModel)]="q"
-        name="q" />
-      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-
+  <form class="form-inline m-3" #mf="ngForm" (ngSubmit)="onSubmit(mf)" >
+    <input
+      class="form-control mr-sm-2 w-100 mb-3"
+      type="search" placeholder="Search" aria-label="Search"
+      name="q" ngModel required #q="ngModel"
+      
+      />
+      <!-- name="q" [(ngModel)]="q" -->
+    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
   </form>
 
 </div>
