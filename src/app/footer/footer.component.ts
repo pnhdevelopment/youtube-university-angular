@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.sass']
 })
 export class FooterComponent implements OnInit {
-
+  
+  objDate = Date.now();
+  
   constructor() { }
 
   ngOnInit() {
