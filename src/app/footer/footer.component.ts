@@ -8,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
   
   objDate = Date.now();
+<<<<<<< HEAD
   
   constructor() { }
 
   ngOnInit() {
+=======
+
+  constructor(){
+>>>>>>> c3b99d83cfea523b4b0751fbbaae3ee41f62675d
   }
+
+  ngOnInit(){}
 
 }

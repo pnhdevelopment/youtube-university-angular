@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Title } from '@angular/platform-browser';
+import { Meta } from '@angular/platform-browser';
 
 
 @Component({
@@ -24,7 +26,17 @@ export class HomeComponent implements OnInit {
   public webDesignChannelIds: string = 'UCvBGFeXbBrq3W9_0oNLJREQ,UCyU5wkjgQYGRB0hIHMwm2Sg,UCVyRiMvfUNMA1UPlDPzG5Ow,UC-b3c7kxa5vU-bnmaROgvog,UCIp9sEZiv36cDG7cEnrVU7Q,UC64eec0UYHxflyEWgyZOvLA';
 
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private meta: Meta,
+    private titleService: Title){
+
+    this.titleService.setTitle( 'Youtube University' );
+    this.meta.addTag({ name: 'description', content: 'A collection of web design and web development tutorials.' });
+    this.meta.addTag({ name: 'author', content: 'pnhdevelopment' });
+    this.meta.addTag({ name: 'keywords', content: 'Web design, Web development' });
+
+  }
 
   ngOnInit() {
 
@@ -33,6 +45,7 @@ export class HomeComponent implements OnInit {
 
   	this.http.get(this.webDevURL).subscribe(response => {
     	this.webDevChannels = response;
+      // console.log(this.webDevChannels);
   	});
 
   	this.http.get(this.webDesignURL).subscribe(response => {

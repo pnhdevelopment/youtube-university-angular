@@ -1,9 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title }  from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -13,6 +12,7 @@ import { VideoItemComponent } from './video-item/video-item.component';
 import { ChannelComponent } from './channel/channel.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SearchComponent } from './search/search.component';
+
 
 const appRoutes: Routes = [
   { path: 'search',                             component: SearchComponent },
@@ -42,7 +42,9 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ 
+    Title
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

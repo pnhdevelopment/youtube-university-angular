@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';
+import { Meta } from '@angular/platform-browser';
 
 
 @Component({
@@ -23,7 +25,9 @@ export class VideoItemComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private titleService: Title,
+    private meta: Meta
   ) { }
 
   ngOnInit() {
@@ -31,6 +35,12 @@ export class VideoItemComponent implements OnInit {
 
   	this.http.get(this.url).subscribe(response => {
     	this.item = response;
+
+      this.titleService.setTitle( this.item.items[0].snippet.title + ' - Youtube University' );
+      this.meta.addTag({ name: 'description', content: this.item.items[0].snippet.title });
+      this.meta.addTag({ name: 'author', content: 'pnhdevelopment' });
+      this.meta.addTag({ name: 'keywords', content: 'Youtube, University, Web development, Web design' });
+
   	});
   }
 
