@@ -17,8 +17,9 @@
         <input
           class="form-control mr-sm-2"
           type="search" placeholder="Search" aria-label="Search"
-          [(ngModel)]="q"
-          name="q" />
+          name="q"
+          #q="ngModel"
+          ngModel />
         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>
@@ -32,8 +33,9 @@
       <input
         class="form-control mb-2 mr-sm-2"
         type="search" placeholder="Search" aria-label="Search"
-        [(ngModel)]="q"
-        name="q" />
+        name="q"
+        #q="ngModel"
+        ngModel />
       <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>

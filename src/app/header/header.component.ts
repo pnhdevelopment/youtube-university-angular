@@ -15,11 +15,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(){}
 
-  // toggleButton(wrapper){
-  //   wrapper.querySelector('.circle').classList.toggle("closed");
-  //   document.querySelector('.mobile-nav').classList.toggle("active");
-  // }
-
   toggleButton(wrapper){
     wrapper.querySelector('.circle').classList.toggle("closed");
     document.querySelector('#mobileNavbar').classList.toggle("reveal");
