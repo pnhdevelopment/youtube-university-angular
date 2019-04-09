@@ -15,10 +15,17 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(){}
 
+  // toggleButton(wrapper){
+  //   wrapper.querySelector('.circle').classList.toggle("closed");
+  //   document.querySelector('.mobile-nav').classList.toggle("active");
+  // }
+
   toggleButton(wrapper){
     wrapper.querySelector('.circle').classList.toggle("closed");
-    document.querySelector('.mobile-nav').classList.toggle("active");
+    document.querySelector('#mobileNavbar').classList.toggle("reveal");
   }
+
+  
 
   onSubmit(form: NgForm) {
     console.log(form.value.q);

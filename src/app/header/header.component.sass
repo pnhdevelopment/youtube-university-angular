@@ -1,58 +1,58 @@
 nav
-	background-color: rgba(0, 0, 0, 0.7)
+  background-color: rgba(0, 0, 0, 0.7)
 
-	a
-		width: 180px
+  a
+    width: 180px
 
 
 .navbar-dark .navbar-toggler-icon
-	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1.0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
-	
-	
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1.0)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
+  
+  
 .navbar-dark .navbar-toggler
-	border-color: rgba(255, 255, 255, 1.0)
+  border-color: rgba(255, 255, 255, 1.0)
 
 
 #wrapper
-	cursor: pointer
+  cursor: pointer
 
 .circle
-	width: 40px
-	height: 40px
-	position: relative
+  width: 40px
+  height: 40px
+  position: relative
 
 .line
-	position: absolute
-	height: 5px
-	width: 100%
-	background: white
-	border-radius: 8px
-	transition: all cubic-bezier(0.26, 0.1, 0.27, 1.55) 0.35s
+  position: absolute
+  height: 5px
+  width: 100%
+  background: white
+  border-radius: 8px
+  transition: all cubic-bezier(0.26, 0.1, 0.27, 1.55) 0.35s
 
 
 .top 
-	top: 18%
+  top: 18%
 
 .middle
-	top: 48%
+  top: 48%
 
 .bottom
-	top: 78%
+  top: 78%
 
 .icon.closed .top
-	transform: rotate(45deg)
-	top: 48%
+  transform: rotate(45deg)
+  top: 48%
 
 .icon.closed .middle, .icon.closed .bottom
-	transform: rotate(-45deg)
-	top: 48%
+  transform: rotate(-45deg)
+  top: 48%
 
-
-.mobile-nav
+#mobileNavbar
 	background-color: rgba(0, 0, 0, 0.7)
-	overflow: hidden
 	max-height: 0
-	transition: 0.2s
+	overflow: hidden
+	transition: 0.3s
 
-.mobile-nav.active
-	max-height: 130px
+
+#mobileNavbar.reveal
+  max-height: 200px
